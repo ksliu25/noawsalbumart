@@ -9,7 +9,7 @@ module Noawsalbumart
 		query = query_string(artist_name, album_name)
 		retries = 3
 		begin
-			doc = Nokogiri::HTML(open("http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=#{query}&rh=i%3Aaps%2Ck%3A#{query}"))
+			doc = Nokogiri::HTML(open("http://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords=#{query}&rh=i%3Aaps%2Ck%3A#{query}").read, nil, 'utf-8')
 		rescue OpenURI::HTTPError => error
 		  response = error.io
 		  puts response.status
