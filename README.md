@@ -22,6 +22,10 @@ NoAWSAlbumArt was mainly an exercise in building an alternative to Amazon Album 
 
 I mainly chose to use amazon simply because of image normalization for most album art at certain sizes.
 
+To use, simply search using Noawsalbumart("artist name", "album name") to return a url to a small album image.
+
+If provided with nil or an empty string, the search will return "Album Art Not Found".
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
