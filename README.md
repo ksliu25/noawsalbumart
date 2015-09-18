@@ -24,12 +24,16 @@ I mainly chose to use amazon simply because of image normalization for most albu
 
 To use, simply search using Noawsalbumart("artist name", "album name") to return a url to a small album image.
 
-If provided with nil or an empty string, the search will return "Album Art Not Found".
-
 <pre><code> Noawsalbumart.search("Kanye West", "Graduation") </code></pre>
 returns
 <pre><code> http://ecx.images-amazon.com/images/I/516is-FPgmL._AA160_.jpg </code></pre>
 ![graduation](http://ecx.images-amazon.com/images/I/516is-FPgmL._AA160_.jpg)
+
+If provided with nil or an empty string, the search will return "Album Art Not Found".
+
+<pre><code> Noawsalbumart.search("", nil) </code></pre>
+returns
+<pre><code> "Album Art Not Found" </pre></code>
 
 ## Development
 
