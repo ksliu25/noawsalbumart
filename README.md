@@ -26,6 +26,11 @@ To use, simply search using Noawsalbumart("artist name", "album name") to return
 
 If provided with nil or an empty string, the search will return "Album Art Not Found".
 
+<pre><code> Noawsalbumart.search("Kanye West", "Graduation") </code></pre>
+returns
+<pre><code> http://ecx.images-amazon.com/images/I/516is-FPgmL._AA160_.jpg </code></pre>
+![graduation](http://ecx.images-amazon.com/images/I/516is-FPgmL._AA160_.jpg)
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
