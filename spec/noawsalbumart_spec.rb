@@ -17,7 +17,7 @@ describe Noawsalbumart do
 		end
 
 		it "returns an 'Album Art Not Found' string when there is no proper one" do
-			expect(subject.search("not an artist", "notanalbum")).to eq("Album Art Not Found")
+			expect(subject.search("", nil)).to eq("Album Art Not Found")
 		end
 
 	end
