@@ -1,3 +1,3 @@
-class Noawsalbumart
-  VERSION = "0.1.0"
+module Noawsalbumart
+  VERSION = "1.0.0"
 end

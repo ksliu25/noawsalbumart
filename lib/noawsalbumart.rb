@@ -2,9 +2,9 @@ require_relative "noawsalbumart/version"
 require "nokogiri"
 require "open-uri"
 
-class Noawsalbumart
+module Noawsalbumart
 	INVALID = ["", "nil", "null", nil]
-	def search(artist_name, album_name)
+	def self.search(artist_name, album_name)
 		return "Album Art Not Found" if INVALID.include?(artist_name) || INVALID.include?(album_name)
 		query = query_string(artist_name, album_name)
 		retries = 3
@@ -13,7 +13,7 @@ class Noawsalbumart
 		rescue OpenURI::HTTPError => error
 		  response = error.io
 		  puts response.status
-		  puts "Retrying #{retries.length} more times"
+		  puts "Retrying #{retries} more times"
 		  retries -= 1
 		  sleep 120
 		  retry
@@ -21,12 +21,15 @@ class Noawsalbumart
 		doc.css("#result_0 img").attr("src").value
 	end
 
-  private
-
-  def query_string(artist_name, album_name)
+  def self.query_string(artist_name, album_name)
 		artist_query = artist_name.split.join("+")
 		album_query = album_name.split.join("+")
 		artist_query + "+" + album_query
   end
 
+  class << self
+  	private :query_string
+  end
+
 end
+
