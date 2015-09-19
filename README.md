@@ -1,4 +1,5 @@
 # Noawsalbumart
+No AWS Album Art scrapes amazon for album art without needing an AWS account. 
 
 ## Installation
 
